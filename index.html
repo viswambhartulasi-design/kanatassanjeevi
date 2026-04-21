@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+    <!-- SEO & Google Ranking Meta Tags -->
+    <title>Kanta's Sanjeevini Psychiatry & Rehab Centre | Best Psychiatrist in Guntur</title>
+    <meta name="description" content="Leading Psychiatric Hospital & Rehabilitation Centre near Guntur, Andhra Pradesh. Specializing in Alcohol de-addiction and Mental Health since 2014.">
+    <meta name="keywords" content="Psychiatrist in Guntur, Rehab Centre Andhra Pradesh, De-addiction Guntur, Sanjeevini Hospital">
+
+    <!-- Favicon (shows your logo in browser tab & Google search results) -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Social Sharing (WhatsApp/FB) -->
+    <meta property="og:title" content="Kanta's Sanjeevini Psychiatry Hospital & Rehab">
+    <meta property="og:description" content="Compassionate Mental Health care in Guntur. Call 8801620974.">
+    <meta property="og:image" content="https://kantassanjeevini.com/logo.png">
+    <meta property="og:url" content="https://kantassanjeevini.com">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup (tells Google your logo & hospital info for search results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hospital",
+      "name": "Kanta's Sanjeevini Psychiatry Hospital & Rehabilitation Centre",
+      "url": "https://kantassanjeevini.com",
+      "logo": "https://kantassanjeevini.com/logo.png",
+      "image": "https://kantassanjeevini.com/logo.png",
+      "description": "Leading Psychiatric Hospital & Rehabilitation Centre in Guntur, Andhra Pradesh. Specializing in Alcohol de-addiction and Mental Health since 2014.",
+      "telephone": "+918801620974",
+      "foundingDate": "2014",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pedakakani",
+        "addressLocality": "Guntur",
+        "addressRegion": "Andhra Pradesh",
+        "addressCountry": "IN"
+      },
+      "medicalSpecialty": ["Psychiatry", "Addiction Medicine", "Rehabilitation"]
+    }
+    </script>
+
+    <!-- CSS & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#f0fdfa', 100: '#ccfbf1', 600: '#0d9488', 700: '#0f766e', 800: '#115e59', 900: '#134e4a' }
+                    },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .service-row { border-bottom: 1px solid #f1f5f9; transition: all 0.3s; }
+        .service-row:hover { background-color: #f0fdfa; padding-left: 12px; color: #0d9488; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade { animation: fadeInUp 0.8s ease-out forwards; }
+
+        /* ── Mobile-first optimisations (portrait phones) ── */
+
+        /* Make tap targets finger-friendly */
+        a, button { -webkit-tap-highlight-color: transparent; }
+
+        /* Nav: tighter on small screens */
+        @media (max-width: 639px) {
+            nav .max-w-7xl { height: 64px; padding-left: 1rem; padding-right: 1rem; }
+            nav img { height: 48px; }
+            nav span.text-xl { font-size: 1rem; }
+
+            /* Hero: full viewport, stack buttons vertically */
+            #home { height: 100svh; }
+            #home h1 { font-size: 2.5rem; line-height: 1.1; margin-bottom: 1rem; }
+            #home p  { font-size: 1rem; margin-bottom: 1.5rem; }
+            #home .flex { gap: 0.75rem; }
+            #home a  { padding: 1rem 1.5rem; font-size: 1rem; border-radius: 1rem; }
+
+            /* About: reduce padding */
+            #about { padding-top: 3rem; padding-bottom: 3rem; }
+            #about h3 { font-size: 1.75rem; }
+            #about p  { font-size: 0.95rem; }
+            #about .grid-cols-2 { gap: 1.5rem; }
+
+            /* Video section */
+            #video-tour { padding-top: 3rem; padding-bottom: 3rem; }
+            #video-tour h2 { font-size: 1.75rem; }
+            #video-tour .rounded-\[3rem\] { border-radius: 1.25rem; }
+
+            /* Services */
+            #services { padding-top: 3rem; padding-bottom: 3rem; }
+            #services h3 { font-size: 1.5rem; }
+            .service-row span { font-size: 1.1rem; }
+
+            /* CTA / appointment section */
+            section.py-24.bg-brand-900 { padding-top: 3rem; padding-bottom: 3rem; }
+            section.py-24.bg-brand-900 h2 { font-size: 1.75rem; }
+            section.py-24.bg-brand-900 p  { font-size: 0.95rem; }
+            section.py-24.bg-brand-900 a  { padding: 1rem 2rem; font-size: 1.1rem; border-radius: 1rem; width: 100%; justify-content: center; }
+            section.py-24.bg-brand-900 .flex { flex-direction: column; gap: 1rem; }
+
+            /* Footer */
+            footer { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+            footer .grid { grid-template-columns: 1fr; gap: 0.5rem; }
+
+            /* Sticky bottom call bar – only on mobile */
+            #sticky-call { display: flex; }
+        }
+
+        /* Hide sticky bar on tablet/desktop */
+        #sticky-call { display: none; }
+
+        /* Sticky bottom call bar styles */
+        #sticky-call {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 100;
+            background: #0d9488;
+            padding: 0.85rem 1.25rem;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
+        }
+        #sticky-call a {
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+            justify-content: center;
+            padding: 0.6rem 0;
+            border-radius: 0.75rem;
+        }
+        #sticky-call a:first-child { background: rgba(255,255,255,0.15); }
+        #sticky-call a:last-child  { background: #25D366; }
+
+        /* Add bottom padding so sticky bar doesn't cover content on mobile */
+        @media (max-width: 639px) {
+            body { padding-bottom: 72px; }
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 selection:bg-brand-100 selection:text-brand-700">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="logo.png" alt="Sanjeevini Logo" class="h-16 w-auto mr-4">
+                <div class="leading-tight">
+                    <span class="text-xl font-extrabold text-brand-900 block tracking-tight uppercase">Kanta's Sanjeevini</span>
+                    <span class="text-[10px] text-brand-600 font-bold uppercase tracking-[0.2em]">Psychiatry & Rehab</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-10 items-center font-bold text-sm uppercase tracking-widest text-slate-500">
+                <a href="#home" class="hover:text-brand-600 transition-colors">Home</a>
+                <a href="#about" class="hover:text-brand-600 transition-colors">About</a>
+                <a href="#video-tour" class="hover:text-brand-600 transition-colors">Facility</a>
+                <a href="tel:8801620974" class="bg-brand-600 text-white px-6 py-3 rounded-full hover:bg-brand-800 transition-all shadow-lg shadow-brand-600/20">Call: 8801620974</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <img src="hero-pic.jpg" alt="Sanjeevini Hospital" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-slate-900/50"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl animate-fade">
+            <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md border border-white/30 px-4 py-2 rounded-full text-white text-xs font-bold uppercase tracking-widest mb-8">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span>Open & Accepting Patients</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-extrabold text-white mb-6 leading-none">
+                Healing Minds,<br><span class="text-brand-400">Restoring Lives.</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto font-medium">
+                Guntur's trusted psychiatric hospital & rehabilitation center since 2014.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="tel:8801620974" class="bg-brand-600 text-white px-10 py-5 rounded-2xl font-extrabold text-lg hover:bg-brand-700 transition-all shadow-2xl flex items-center justify-center">
+                    <i data-lucide="phone" class="mr-3"></i> Call for Appointment
+                </a>
+                <a href="#video-tour" class="bg-white text-slate-900 px-10 py-5 rounded-2xl font-extrabold text-lg hover:bg-slate-100 transition-all shadow-xl flex items-center justify-center">
+                    Explore Facility
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-brand-600 font-bold uppercase tracking-widest mb-4">Dedicated to Mental Wellness</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold mb-8 text-slate-900 leading-tight">Compassionate Care Meets Clinical Excellence</h3>
+                <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                    Kantas Sanjeevini Psychiatry and Rehabilitation Hospital provides high-quality, patient-centered care. Our multidisciplinary team focuses on treating anxiety, depression, addiction, and psychiatric challenges in a safe, stigma-free environment.
+                </p>
+                <div class="grid grid-cols-2 gap-8 border-t border-slate-100 pt-8">
+                    <div>
+                        <p class="text-3xl font-extrabold text-brand-600 italic">2014</p>
+                        <p class="text-sm font-bold text-slate-500 uppercase tracking-widest">Year Founded</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-extrabold text-brand-600 italic">5000+</p>
+                        <p class="text-sm font-bold text-slate-500 uppercase tracking-widest">Healed Lives</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-brand-50 p-10 rounded-[3rem] border border-brand-100 shadow-inner">
+                <h4 class="text-xl font-extrabold mb-6 flex items-center text-brand-900">
+                    <i data-lucide="award" class="mr-3 text-brand-600"></i> Why Choose Us?
+                </h4>
+                <ul class="space-y-6">
+                    <li class="flex items-start">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-brand-600 mr-4 mt-1"></i>
+                        <span class="text-slate-700 font-medium"><strong>Professional Staff & Experienced Doctors:</strong> Our team consists of highly qualified professionals with extensive experience in treating various mental health conditions.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="heart-handshake" class="w-6 h-6 text-brand-600 mr-4 mt-1"></i>
+                        <span class="text-slate-700 font-medium"><strong>Compassionate:</strong> Human-centered care for every individual.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="zap" class="w-6 h-6 text-brand-600 mr-4 mt-1"></i>
+                        <span class="text-slate-700 font-medium"><strong>24/7 Support:</strong> Constant supervision and medical oversight.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tour Section (SINGLE FULL WIDTH VIDEO) -->
+    <section id="video-tour" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">A Look Inside</h2>
+                    <p class="text-slate-500 text-lg">Our facility is designed to be a peaceful sanctuary, providing the privacy and calmness required for mental healing.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <span class="inline-flex items-center px-4 py-2 bg-brand-100 text-brand-700 rounded-full text-xs font-bold uppercase tracking-widest">
+                        <i data-lucide="video" class="w-4 h-4 mr-2"></i> Virtual Facility Tour
+                    </span>
+                </div>
+            </div>
+            
+            <div class="relative w-full rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.2)] bg-black aspect-video">
+                <!-- Autoplay Fix: Muted and PlaysInline -->
+                <video id="mainVideo" class="w-full h-full object-cover" autoplay muted loop playsinline poster="hero-pic.jpg">
+                    <source src="drone-full.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 md:bottom-8 md:left-8 text-white">
+                    <h3 class="text-sm md:text-base font-bold">Premium Rehabilitation Campus</h3>
+                    <p class="text-white/70 text-xs md:text-sm">Near Guntur, Andhra Pradesh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mb-16">
+                <h2 class="text-brand-600 font-bold uppercase tracking-widest mb-2">Our Specialties</h2>
+                <h3 class="text-4xl font-extrabold">Clinical Care Areas</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-x-20 gap-y-2">
+                <div class="service-row py-8 flex justify-between items-center group cursor-pointer">
+                    <span class="text-2xl font-bold text-slate-800">Alcoholism De-addiction</span>
+                    <i data-lucide="arrow-up-right" class="text-brand-600 transition-transform group-hover:scale-125"></i>
+                </div>
+                <div class="service-row py-8 flex justify-between items-center group cursor-pointer">
+                    <span class="text-2xl font-bold text-slate-800">Depression & Mood Disorders</span>
+                    <i data-lucide="arrow-up-right" class="text-brand-600 transition-transform group-hover:scale-125"></i>
+                </div>
+                <div class="service-row py-8 flex justify-between items-center group cursor-pointer">
+                    <span class="text-2xl font-bold text-slate-800">Drug Addiction Treatment</span>
+                    <i data-lucide="arrow-up-right" class="text-brand-600 transition-transform group-hover:scale-125"></i>
+                </div>
+                <div class="service-row py-8 flex justify-between items-center group cursor-pointer">
+                    <span class="text-2xl font-bold text-slate-800">Schizophrenia Management</span>
+                    <i data-lucide="arrow-up-right" class="text-brand-600 transition-transform group-hover:scale-125"></i>
+                </div>
+                <div class="service-row py-8 flex justify-between items-center group cursor-pointer">
+                    <span class="text-2xl font-bold text-slate-800">Geriatric (Elderly) Care</span>
+                    <i data-lucide="arrow-up-right" class="text-brand-600 transition-transform group-hover:scale-125"></i>
+                </div>
+                <div class="service-row py-8 flex justify-between items-center group cursor-pointer">
+                    <span class="text-2xl font-bold text-slate-800">Child ADHD & Behavior</span>
+                    <i data-lucide="arrow-up-right" class="text-brand-600 transition-transform group-hover:scale-125"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section (Direct Call) -->
+    <section class="py-24 bg-brand-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-8">Ready to Start Recovery?</h2>
+            <p class="text-xl text-brand-200 mb-12 max-w-2xl mx-auto">We are available 24/7 for emergencies. For appointments and inquiries, please call us directly.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                <a href="tel:8801620974" class="group bg-white text-brand-900 px-12 py-6 rounded-3xl font-extrabold text-2xl shadow-2xl hover:bg-brand-50 transition-all flex items-center">
+                    <i data-lucide="phone-call" class="mr-4 group-hover:animate-bounce"></i> 8801620974
+                </a>
+                <a href="https://wa.me/918801620974" class="bg-[#25D366] text-white px-12 py-6 rounded-3xl font-extrabold text-2xl shadow-2xl hover:opacity-90 transition-all flex items-center">
+                    <i data-lucide="message-circle" class="mr-4"></i> WhatsApp Us
+                </a>
+            </div>
+            
+            <p class="mt-12 text-brand-400 font-bold uppercase tracking-widest text-sm">Hospitals and Health Care • Guntur, AP</p>
+        </div>
+        <!-- Decorative Background Circle -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-800 rounded-full opacity-20"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex flex-col items-center mb-10">
+                <img src="logo.png" alt="Sanjeevini Logo" class="h-10 w-auto mb-4 opacity-70">
+                <p class="text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">Kanta's Sanjeevini Hospital</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-sm text-slate-400 font-bold uppercase tracking-widest mb-12">
+                <div>Est. 2014</div>
+                <div>Near Guntur, AP</div>
+                <div>11-50 Employees</div>
+            </div>
+            <div class="border-t border-slate-50 pt-10 text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+                &copy; 2024 All Rights Reserved. Professional Mental Health Services.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Bottom Call Bar (mobile only) -->
+    <div id="sticky-call">
+        <a href="tel:8801620974">
+            <i data-lucide="phone-call" style="width:18px;height:18px;"></i> Call Now
+        </a>
+        <a href="https://wa.me/918801620974">
+            <i data-lucide="message-circle" style="width:18px;height:18px;"></i> WhatsApp
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Safety: Autoplay fallback if browser blocks
+        window.addEventListener('load', () => {
+            const video = document.getElementById('mainVideo');
+            if (video) {
+                video.play().catch(() => {
+                    console.log("Autoplay waiting for user interaction.");
+                });
+            }
+        });
+    </script>
+</body>
+</html>
